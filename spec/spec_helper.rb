@@ -10,9 +10,14 @@ RSpec::Matchers.define :include_array do |expected|
   end
 end
 
+# def run_file(file)
+#   eval(File.read(file), binding)
+# end
+
 def run_file(file)
-  eval(File.read(file), binding)
+  eval(File.read(file), binding, file)
 end
+
 
 def get_variable_from_file(file, variable)
   file_scope = binding
